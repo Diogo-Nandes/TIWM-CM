@@ -13,7 +13,10 @@ fun HomePage(navController: NavController, historyViewModel: HistoryViewModel) {
     var height by remember { mutableStateOf("") }
     var result by remember { mutableStateOf<Double?>(null) }
 
-    Column(modifier = Modifier.padding(16.dp)) {
+    Column(horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(all = 32.dp)) {
         Text(text = "Calculadora de IMC", style = MaterialTheme.typography.headlineLarge, modifier = Modifier.padding(bottom = 16.dp))
 
         Spacer(modifier = Modifier.height(64.dp))
