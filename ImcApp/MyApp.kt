@@ -27,7 +27,7 @@ fun MyApp(isDarkTheme: Boolean, onThemeToggle: () -> Unit) {
         bottomBar = {
             NavigationBar {
                 NavigationBarItem(
-                    selected = true,
+                    selected = false,
                     onClick = { navController.navigate("home") },
                     icon = { Icon(Icons.Default.Home, contentDescription = "Home") },
                     label = { Text("Início") }
