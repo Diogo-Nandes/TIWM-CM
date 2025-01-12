@@ -15,7 +15,7 @@ import com.example.imcapp.HistoryPage
 import com.example.imcapp.SettingsPage
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
-//import androidx.compose.material.icons.filled.History
+import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Settings
 
 @Composable
@@ -35,7 +35,7 @@ fun MyApp(isDarkTheme: Boolean, onThemeToggle: () -> Unit) {
                 NavigationBarItem(
                     selected = false,
                     onClick = { navController.navigate("history") },
-                    icon = { Icon(Icons.Default.Settings, contentDescription = "Histórico") },
+                    icon = { Icon(Icons.Default.Info, contentDescription = "Histórico") },
                     label = { Text("Histórico") }
                 )
                 NavigationBarItem(
