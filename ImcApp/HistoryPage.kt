@@ -24,6 +24,27 @@ fun HistoryPage(historyViewModel: HistoryViewModel) {
         if (history.isEmpty()) {
             Text(text = "Nenhum histórico disponível.")
         } else {
+            // Adicionar títulos das colunas
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(vertical = 4.dp),
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                Text(
+                    text = "IMC",
+                    style = MaterialTheme.typography.bodyLarge,
+                    modifier = Modifier.weight(1f)
+                )
+                Text(
+                    text = "Data",
+                    style = MaterialTheme.typography.bodyLarge,
+                    modifier = Modifier.weight(0.35f)
+                )
+            }
+
+            Divider() // Linha abaixo dos títulos
+            
             LazyColumn(modifier = Modifier.fillMaxWidth(),
                 contentPadding = PaddingValues(vertical = 8.dp)) {
                 items(history) { entry ->
