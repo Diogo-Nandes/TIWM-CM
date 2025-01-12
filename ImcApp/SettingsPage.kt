@@ -9,8 +9,14 @@ import androidx.compose.foundation.layout.*
 
 @Composable
 fun SettingsPage(isDarkTheme: Boolean, onThemeToggle: () -> Unit) {
-    Column(modifier = Modifier.padding(16.dp)) {
-        Text("Definições")
+    Column(modifier = Modifier
+            .fillMaxSize()
+            .padding(all = 32.dp)) {
+        Text(text = "Definições", style = MaterialTheme.typography.headlineLarge, modifier = Modifier.align(alignment = Alignment.CenterHorizontally))
+
+        Spacer(modifier = Modifier.height(64.dp))
+
+        Text(text = "Tema Escuro:", style = MaterialTheme.typography.bodyLarge, modifier = Modifier.padding(bottom = 16.dp))
         Switch(
             checked = isDarkTheme,
             onCheckedChange = { onThemeToggle() }
