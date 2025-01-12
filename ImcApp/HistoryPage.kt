@@ -13,8 +13,13 @@ import androidx.compose.ui.unit.dp
 fun HistoryPage(historyViewModel: HistoryViewModel) {
     val history = historyViewModel.history.collectAsState().value
 
-    Column(modifier = Modifier.padding(16.dp)) {
-        Text(text = "Histórico", style = MaterialTheme.typography.headlineMedium)
+    Column(horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(all = 32.dp)) {
+        Text(text = "Histórico", style = MaterialTheme.typography.headlineLarge, modifier = Modifier.padding(bottom = 16.dp))
+
+        Spacer(modifier = Modifier.height(32.dp))
 
         if (history.isEmpty()) {
             Text(text = "Nenhum histórico disponível.")
