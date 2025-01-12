@@ -12,6 +12,7 @@ fun HomePage(navController: NavController, historyViewModel: HistoryViewModel) {
     var weight by remember { mutableStateOf("") }
     var height by remember { mutableStateOf("") }
     var result by remember { mutableStateOf<Double?>(null) }
+    var classification by remember { mutableStateOf("") }
 
     Column(horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
@@ -44,6 +45,12 @@ fun HomePage(navController: NavController, historyViewModel: HistoryViewModel) {
             val heightValue = height.toDoubleOrNull()
             if (weightValue != null && heightValue != null && heightValue > 0) {
                 result = weightValue / (heightValue * heightValue)
+                classification = when {
+                    result!! < 18.5 -> "Baixo Peso"
+                    result!! < 25 -> "Peso Normal"
+                    result!! < 30 -> "Excesso de Peso"
+                    else -> "Obesidade"
+                }
                 historyViewModel.addEntry(
                     date = java.time.LocalDate.now().toString(),
                     bmi = result!!
@@ -56,7 +63,8 @@ fun HomePage(navController: NavController, historyViewModel: HistoryViewModel) {
         Spacer(modifier = Modifier.height(16.dp))
 
         result?.let {
-            Text(text = "Seu IMC: %.2f".format(it))
+            Text(text = "Seu IMC: %.2f".format(it)) // Limitar a 2 casas decimais
+            Text(text = classification)
         }
     }
 }
