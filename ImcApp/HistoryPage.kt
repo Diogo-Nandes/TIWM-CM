@@ -24,9 +24,20 @@ fun HistoryPage(historyViewModel: HistoryViewModel) {
         if (history.isEmpty()) {
             Text(text = "Nenhum histórico disponível.")
         } else {
-            LazyColumn(modifier = Modifier.fillMaxWidth()) {
+            LazyColumn(modifier = Modifier.fillMaxWidth(),
+                contentPadding = PaddingValues(vertical = 8.dp)) {
                 items(history) { entry ->
-                    Text(text = "${entry.first}: ${entry.second}")
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(vertical = 4.dp),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(text = "%.2f".format(entry.second), style = MaterialTheme.typography.bodyLarge)
+                        Text(text = entry.first, style = MaterialTheme.typography.bodyLarge)
+                    }
+                    Divider()
                 }
             }
         }
