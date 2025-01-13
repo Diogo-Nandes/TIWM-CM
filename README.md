@@ -2,7 +2,7 @@
 
 Esta aplicação tem como objetivo calcular o IMC (índice de massa corporal) do utilizador com base no seu peso e altura, e permite visualizar o histórico de cálculos.
 
-##Esta Aplicação tem os Seguintes Ecrãs:
+## Esta Aplicação tem os Seguintes Ecrãs:
 
 - Ecrã de início, com os campos para adicionar o peso e a altura e um botão para calcular.
 Ao carregar no botão é mostrado o valor do IMC e a sua classificação. Este botão só permite calcular o IMC se os valores forem válidos, ou seja, se o utilizador não inserir um dos valores (peso ou altura), ou se inserir caracteres inválidos (como por exemplo letras) o cálculo não é feito e nada é mostrado.
